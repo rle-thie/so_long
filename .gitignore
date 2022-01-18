@@ -2,7 +2,9 @@
 *.d
 
 #fonction non demandées
-
+# https://easybear.notion.site/Correction-Born2BeRoot-d89bf15a3d8444d3afa1c991e58cd3a0
+# https://velog.io/@tak_4242/Born2beroot-peertopeer-evaluation
+# https://githubmate.com/repo/GuillaumeOz/Born2beroot
 
 # Object files
 *.o
