@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/18 15:19:25 by rle-thie         ###   ########.fr       */
+/*   Created: 2021/11/23 18:15:51 by rle-thie          #+#    #+#             */
+/*   Updated: 2021/12/13 12:52:28 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int main(void)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    void    *mlx_ptr;
-    void    *win_ptr;
+	size_t		i;
+	size_t		j;
 
-    mlx_ptr = mlx_init();
-    win_ptr = mlx_new_window(mlx_ptr, 500, 500, "oui");
-    mlx_loop(mlx_ptr);
-    return (0);
+	i = 0;
+	if (*little == '\0' || little == NULL)
+		return ((char *)big);
+	while (big[i] != '\0' && i < len)
+	{
+		j = 0;
+		while (little[j] == big[i + j] && i + j < len)
+		{
+			if (little[j + 1] == '\0')
+				return ((char *)big + i);
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/18 15:19:25 by rle-thie         ###   ########.fr       */
+/*   Created: 2021/12/07 15:48:11 by rle-thie          #+#    #+#             */
+/*   Updated: 2021/12/13 14:23:58 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int main(void)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-    void    *mlx_ptr;
-    void    *win_ptr;
+	t_list	*last;
 
-    mlx_ptr = mlx_init();
-    win_ptr = mlx_new_window(mlx_ptr, 500, 500, "oui");
-    mlx_loop(mlx_ptr);
-    return (0);
+	last = ft_lstlast(*alst);
+	if (!last)
+		*alst = new;
+	else
+		last->next = new;
 }

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/18 15:19:25 by rle-thie         ###   ########.fr       */
+/*   Created: 2021/11/26 16:24:02 by rle-thie          #+#    #+#             */
+/*   Updated: 2021/12/13 12:49:12 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int main(void)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    void    *mlx_ptr;
-    void    *win_ptr;
+	size_t			i;
+	unsigned char	*s1;
 
-    mlx_ptr = mlx_init();
-    win_ptr = mlx_new_window(mlx_ptr, 500, 500, "oui");
-    mlx_loop(mlx_ptr);
-    return (0);
+	i = 0;
+	s1 = s;
+	while (i < n)
+	{
+		s1[i] = c;
+		i++;
+	}
+	return (s1);
 }

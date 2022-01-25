@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/18 15:19:25 by rle-thie         ###   ########.fr       */
+/*   Created: 2021/12/07 18:03:22 by rle-thie          #+#    #+#             */
+/*   Updated: 2021/12/13 12:54:01 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int main(void)
+// static void ft_lstdelonee(t_list *lst, void (*del)(void*))
+// {
+// 	del((void*)lst);
+// }
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    void    *mlx_ptr;
-    void    *win_ptr;
+	t_list	*tmp;
+	t_list	*tmp2;
 
-    mlx_ptr = mlx_init();
-    win_ptr = mlx_new_window(mlx_ptr, 500, 500, "oui");
-    mlx_loop(mlx_ptr);
-    return (0);
+	tmp = *lst;
+	while (tmp != NULL)
+	{
+		tmp2 = tmp->next;
+		ft_lstdelone(tmp, del);
+		tmp = tmp2;
+	}
+	*lst = NULL;
 }

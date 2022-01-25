@@ -11,16 +11,16 @@ RM = rm -fr
 
 CFLAGS = -Wall -Wextra -Werror
 
-${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
-
 all:	${NAME}
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o: %.c
+	$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
+
+${NAME}:    ${OBJS}
+		${CC} ${CFLAGS} srcs/*.o srcs/*/*.o gnl/*.o -Lmlx -lmlx -L/usr/lib -Imlx -lXext -lX11 -lm -lz -o ${NAME}
 
 bonus:	${OBJS_BONUS}
-			ar rc ${NAME}
+		ar rc ${NAME}
 
 clean:
 		${RM} ${OBJS}

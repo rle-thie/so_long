@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/18 15:19:25 by rle-thie         ###   ########.fr       */
+/*   Created: 2021/12/02 17:55:02 by rle-thie          #+#    #+#             */
+/*   Updated: 2021/12/06 19:03:52 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int main(void)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    void    *mlx_ptr;
-    void    *win_ptr;
+	size_t	lentt;
+	char	*tab;
+	size_t	i;
+	size_t	y;
 
-    mlx_ptr = mlx_init();
-    win_ptr = mlx_new_window(mlx_ptr, 500, 500, "oui");
-    mlx_loop(mlx_ptr);
-    return (0);
+	if (!s1 || !s2)
+		return (NULL);
+	i = 0;
+	y = 0;
+	lentt = ft_strlen(s1) + ft_strlen(s2);
+	tab = malloc(sizeof(char) * (lentt + 1));
+	if (!tab)
+		return (NULL);
+	while (s1[y])
+		tab[i++] = s1[y++];
+	y = 0;
+	while (s2[y])
+		tab[i++] = s2[y++];
+	tab[i] = '\0';
+	return (tab);
 }
