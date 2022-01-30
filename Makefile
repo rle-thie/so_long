@@ -1,8 +1,4 @@
-SRCS	= $(addprefix srcs/, main.c parsing/parse_input.c \
-			parsing/parse_input_utils.c utils/init_data.c \
-			utils/ft_strlen.c utils/get_next_line.c \
-			utils/get_next_line_utils.c utils/ft_error.c game/game.c \
-			game/move.c game/game_utils.c)
+SRCS	= $(addprefix srcs/, main.c)
 
 OBJS	= ${SRCS:.c=.o}
 
