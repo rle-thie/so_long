@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/30 13:35:08 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:01:19 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,16 @@
 # include "srcs/utils/GNL/get_next_line.h"
 
 // parsing :
-int init_parsing(int fd);
-
+int	init_parsing(int fd);
 
 // game :
+
+// GNL :
+size_t	ft_strlen(char *str);
+char	*get_next_line(int fd);
+char	*ft_strjoin(char *s1, char *s2);
+int		ft_strchr(char *s, char c);
+
 typedef struct s_data
 {
 	char **tab;

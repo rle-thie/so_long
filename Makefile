@@ -1,8 +1,6 @@
 SRCS	= $(addprefix srcs/, main.c \
 							parsing/init_parsing.c \
-							utils/get_next_line.c \
-							utils/get_next_line_utils.c \
-							utils/get_next_line.h)
+							utils)
 
 OBJS	= ${SRCS:.c=.o}
 

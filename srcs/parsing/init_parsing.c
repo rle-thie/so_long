@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 12:59:49 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/30 13:35:58 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/01/30 14:56:01 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int init_parsing(int fd)
 		return (0);
 	while (get_next_line(fd) != NULL)
 		ligne++;
-	
+
 	return (ligne);
 }
