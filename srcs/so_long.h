@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/30 12:06:20 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/01/30 12:30:05 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 # define SO_LONG_H
 
 # include <mlx.h>
-# include "libft/libft.h"
+# include "utils/GNL/get_next_line.h"
 
 #endif
