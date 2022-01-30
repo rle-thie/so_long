@@ -1,29 +1,33 @@
-SRCS = main.c \
-		
+SRCS	= $(addprefix srcs/, main.c parsing/parse_input.c \
+			parsing/parse_input_utils.c utils/init_data.c \
+			utils/ft_strlen.c utils/get_next_line.c \
+			utils/get_next_line_utils.c utils/ft_error.c game/game.c \
+			game/move.c game/game_utils.c)
 
-OBJS = ${SRCS:.c=.o}
+OBJS	= ${SRCS:.c=.o}
 
-NAME = so_long.a
+NAME = so_long
 
-CC = gcc
+RM		= rm -f
 
-RM = rm -fr
+CC		= cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g3
 
-all:	${NAME}
+all:		${NAME}
 
-%.o: %.c
-	$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
+.c.o:
+			${CC} ${CFLAGS} -I/usr/include -Imlx -c $< -o ${<:.c=.o}
 
-${NAME}:    ${OBJS}
-		${CC} ${CFLAGS} srcs/*.o srcs/*/*.o gnl/*.o -Lmlx -lmlx -L/usr/lib -Imlx -lXext -lX11 -lm -lz -o ${NAME}
-
-bonus:	${OBJS_BONUS}
-		ar rc ${NAME}
+${NAME}:	${OBJS}
+			${CC} ${CFLAGS} ${OBJS} -Lmlx -lmlx -L/usr/lib -Imlx -lXext -lX11 -lm -lz -o ${NAME}
 
 clean:
-		${RM} ${OBJS}
+			${RM} ${OBJS}
 
-fclean: clean
-		${RM} ${NAME}
+fclean:		clean
+			${RM} ${NAME}
+
+re:			fclean all
+
+.PHONY: all clean fclean re
