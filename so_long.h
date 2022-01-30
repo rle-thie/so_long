@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/30 17:46:26 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/01/30 18:35:17 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ typedef struct s_data
 	int		c;
 	int		e;
 	int		p;
-	int		length;
-	int		width;
+	int		row;
+	int		col;
 }t_data;
 
 // parsing :
 void	init_data(t_data *data);
+void	count_lines(t_data *data);
 
 // game :
 
