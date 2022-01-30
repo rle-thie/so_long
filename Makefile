@@ -1,10 +1,11 @@
 SRCS	= $(addprefix srcs/, main.c \
 							parsing/init_parsing.c \
-							utils)
+							utils/get_next_line.c \
+							utils/get_next_line_utils.c)
 
 OBJS	= ${SRCS:.c=.o}
 
-NAME = so_long
+NAME 	= so_long
 
 RM		= rm -f
 

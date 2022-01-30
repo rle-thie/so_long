@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/30 13:28:22 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/01/30 17:47:02 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 
 int main(void)
 {
-	int fd;
-
-	fd = open("../maps/map.ber", O_RDONLY);
-	init_parsing(fd);
-	close(fd);
+	t_data	data;
+	
+	init_data(&data);
+	printf("%d", data.length);
+	return(0);
 }
