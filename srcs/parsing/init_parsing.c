@@ -16,11 +16,7 @@ void	count_lines(t_data *data)
 {
 	int		fd;
 	char	*str;
-	int		row;
-	int		col;
-	
-	row = 0;
-	col = 0;
+
 	fd = open("maps/map1.ber", O_RDONLY);
 	while (1)
 	{
@@ -34,6 +30,9 @@ void	count_lines(t_data *data)
 		free(str);
 	}
 	close(fd);
+	fd = 0;
+	i = 0;
+	while (fd < ) 
 }
 
 void	init_data(t_data *data)
