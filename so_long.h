@@ -35,6 +35,7 @@ typedef struct s_data
 }t_data;
 
 // parsing :
+void    init_parsing(t_data data, char *arg);
 void	init_data(t_data *data);
 void	count_lines(t_data *data, char *arg);
 int		init_tab_data(t_data *data, char *arg);

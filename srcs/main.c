@@ -30,8 +30,8 @@ int main(int ac, char **av)
 	if (ac != 2)
 		return (ft_error("Error\nNumber of argument not valid"));
 	init_data(&data);
-	count_lines(&data, av[1]);
-	printf("row=%d col=%d\n", data.row, data.col);
+	//count_lines(&data, av[1]);
+	init_parsing(&data, av[1]);	
 	while (i < data.row)
 		printf("%s", data.tab[i++]);
 	return(0);
