@@ -12,17 +12,25 @@
 
 #include "../../so_long.h"
 
-void	init_tab_data(t_data *data)
+int	init_tab_data(t_data *data)
 {
+	int	fd;
 	int	i;
 
 	i = 0;
-	data->tab = malloc(sizeof(char *) * data->col);
-	while (i < data->row)
+	fd = open("maps/map1.ber", O_RDONLY);
+	data->tab = malloc(sizeof(char *) * (data->row + 1));
+	if (!data->tab)
+		return (ft_error("Error\nCan't open file."));
+	while (1)
 	{
-		data->tab[i] = malloc(sizeof(char *) * data->row);
+		data->tab[i] = get_next_line(fd);
+		if (data->tab[i] == NULL)
+			break ;
 		i++;
 	}
+	close(fd);
+	return (1);
 }
 
 void	count_lines(t_data *data)
@@ -42,8 +50,8 @@ void	count_lines(t_data *data)
 		data->row++;
 		free(str);
 	}
-	init_tab_data(data);
 	close(fd);
+	init_tab_data(data);
 }
 
 void	init_data(t_data *data)

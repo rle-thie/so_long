@@ -37,7 +37,7 @@ typedef struct s_data
 // parsing :
 void	init_data(t_data *data);
 void	count_lines(t_data *data);
-void	init_tab_data(t_data *data);
+int		init_tab_data(t_data *data);
 
 // game :
 
@@ -47,4 +47,5 @@ char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strchr(char *s, char c);
 
+int ft_error(char *str);
 #endif

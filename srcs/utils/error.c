@@ -10,28 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
-// int main(void)
-// {
-//     void    *mlx_ptr;
-//     void    *win_ptr;
-
-//     mlx_ptr = mlx_init();
-//     win_ptr = mlx_new_window(mlx_ptr, 64, 64, "so_long");
-//     mlx_loop(mlx_ptr);
-//     return (0);
-// }
-
-int main(void)
+int ft_error(char *str)
 {
-	t_data	data;
-	int i=0;
-
-	init_data(&data);
-	count_lines(&data);
-	printf("row=%d col=%d\n", data.row, data.col);
-	while (i < data.row)
-		printf("%s", data.tab[i++]);
-	return(0);
+    printf("%s", str);
+    return (0);
 }
