@@ -12,13 +12,13 @@
 
 #include "../../so_long.h"
 
-int	init_tab_data(t_data *data)
+int	init_tab_data(t_data *data, char *arg)
 {
 	int	fd;
 	int	i;
 
 	i = 0;
-	fd = open("maps/map1.ber", O_RDONLY);
+	fd = open(arg, O_RDONLY);
 	data->tab = malloc(sizeof(char *) * (data->row + 1));
 	if (!data->tab)
 		return (ft_error("Error\nCan't open file."));
@@ -33,12 +33,12 @@ int	init_tab_data(t_data *data)
 	return (1);
 }
 
-void	count_lines(t_data *data)
+void	count_lines(t_data *data, char *arg)
 {
 	int		fd;
 	char	*str;
 
-	fd = open("maps/map1.ber", O_RDONLY);
+	fd = open(arg, O_RDONLY);
 	while (1)
 	{
 		str = get_next_line(fd);
@@ -51,7 +51,7 @@ void	count_lines(t_data *data)
 		free(str);
 	}
 	close(fd);
-	init_tab_data(data);
+	init_tab_data(data, arg);
 }
 
 void	init_data(t_data *data)

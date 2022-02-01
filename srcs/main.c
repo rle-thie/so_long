@@ -23,13 +23,14 @@
 //     return (0);
 // }
 
-int main(void)
+int main(int ac, char **av)
 {
 	t_data	data;
-	int i=0;
-
+	int i = 0;
+	if (ac != 2)
+		return (ft_error("Error\nNumber of argument not valid"));
 	init_data(&data);
-	count_lines(&data);
+	count_lines(&data, av[1]);
 	printf("row=%d col=%d\n", data.row, data.col);
 	while (i < data.row)
 		printf("%s", data.tab[i++]);

@@ -36,8 +36,8 @@ typedef struct s_data
 
 // parsing :
 void	init_data(t_data *data);
-void	count_lines(t_data *data);
-int		init_tab_data(t_data *data);
+void	count_lines(t_data *data, char *arg);
+int		init_tab_data(t_data *data, char *arg);
 
 // game :
 
