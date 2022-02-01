@@ -42,7 +42,7 @@ void	count_lines(t_data *data)
 		data->row++;
 		free(str);
 	}
-	init_data(data);
+	init_tab_data(data);
 	close(fd);
 }
 

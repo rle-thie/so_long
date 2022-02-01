@@ -15,11 +15,19 @@ CFLAGS	= -Wall -Wextra -Werror -g3
 
 all:		${NAME}
 
-.c.o:
-			${CC} ${CFLAGS} -I/usr/include -Imlx -c $< -o ${<:.c=.o}
+#.c.o:
+#			${CC} ${CFLAGS} -I/usr/include -Imlx -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
-			${CC} ${CFLAGS} ${OBJS} -Lmlx -lmlx -L/usr/lib -Imlx -lXext -lX11 -lm -lz -o ${NAME}
+# pour mac
+%.o: %.c
+	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
+
+#${NAME}:	${OBJS}
+#			${CC} ${CFLAGS} ${OBJS} -Lmlx -lmlx -L/usr/lib -Imlx -lXext -lX11 -lm -lz -o ${NAME}
+
+#pour mac
+$(NAME): $(OBJS)
+	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 			${RM} ${OBJS}
