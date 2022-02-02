@@ -38,8 +38,9 @@ void	count_lines(t_data *data, char *arg)
 	int		fd;
 	char	*str;
 
-	// is_map_ok(data, arg);
 	fd = open(arg, O_RDONLY);
+	if (!fd)
+		return (ft_error("Error\nCant open file"));
 	while (1)
 	{
 		str = get_next_line(fd);
@@ -67,21 +68,22 @@ void	init_data(t_data *data)
 
 int		check_input(char *file)
 {
-	char *wanted;
+	int		i;
 
-	wanted = "reb.";
-	if (ft_strlen(file) < 4)
-		return (0);
-	// verifier si le dernier char est 'r' avant dernier 'e' etc..
+	if (ft_strlen(file) <= 4)
+		return (ft_error("Error\nlength of file name are wrong"));
+	i = ft_strlen(file);
+	if (file[i-1] != 'r' || file[i-2] != 'e' || file[i-3] != 'b' || file[i-4] != '.')
+		return (ft_error("Error\nFile have to be .ber ext"));
 	return (1);
 }
 
-int		init_parsing(t_data data, char *arg)
-{
-    if (!check_input(arg) || !count_map_line(data, arg) || !img_is_ok())
-        return (0);
-    if (!init_map(data, arg) || !check_line_length(data)
-        || !chars_is_ok(data) || !check_border(data))
-        return (0);
-    return (1);
-}
+// int		init_parsing(t_data data, char *arg)
+// {
+//     if (!check_input(arg) || !count_map_line(data, arg) || !img_is_ok())
+//         return (0);
+//     if (!init_map(data, arg) || !check_line_length(data)
+//         || !chars_is_ok(data) || !check_border(data))
+//         return (0);
+//     return (1);
+// }

@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/01/30 18:39:26 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/02 15:49:42 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,15 @@
 int main(int ac, char **av)
 {
 	t_data	data;
-	int i = 0;
+	// int i = 0;
 	if (ac != 2)
 		return (ft_error("Error\nNumber of argument not valid"));
 	init_data(&data);
+	
+	check_input(av[1]);
 	//count_lines(&data, av[1]);
-	init_parsing(&data, av[1]);	
-	while (i < data.row)
-		printf("%s", data.tab[i++]);
+	// init_parsing(&data, av[1]);	
+	// while (i < data.row)
+	// 	printf("%s", data.tab[i++]);
 	return(0);
 }
