@@ -33,7 +33,7 @@ int	init_tab_data(t_data *data, char *arg)
 	return (1);
 }
 
-void	count_lines(t_data *data, char *arg)
+int	count_lines(t_data *data, char *arg)
 {
 	int		fd;
 	char	*str;
@@ -53,8 +53,8 @@ void	count_lines(t_data *data, char *arg)
 		free(str);
 	}
 	close(fd);
-
-	init_tab_data(data, arg);
+	return (1);
+	//init_tab_data(data, arg);
 }
 
 void	init_data(t_data *data)
@@ -64,6 +64,13 @@ void	init_data(t_data *data)
 	data->p = 0;
 	data->row = 0;
 	data->col = 0;
+}
+
+int		img_is_ok()
+{
+	if (!open("../asset/exit.xpm", O_RDONLY))
+		return (ft_error("Can't open exit.xpm"));
+	return (1);
 }
 
 int		check_input(char *file)
@@ -80,7 +87,7 @@ int		check_input(char *file)
 
 // int		init_parsing(t_data data, char *arg)
 // {
-//     if (!check_input(arg) || !count_map_line(data, arg) || !img_is_ok())
+//     if (!check_input(arg) || !count_lines(data, arg) || !img_is_ok())
 //         return (0);
 //     if (!init_map(data, arg) || !check_line_length(data)
 //         || !chars_is_ok(data) || !check_border(data))
