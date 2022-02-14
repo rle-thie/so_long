@@ -96,9 +96,32 @@ int		check_input(char *file)
 int		check_border(t_data *data)
 {
 	int	i;
-	int y;
+	int max;
 
-	data->tab
+	i = 0;
+	max = ft_strlen(data->tab[0]);
+	while(i < data->col)
+	{
+		// printf("%c", data->tab[0][i]);
+		if (data->tab[0][i] != '1')
+			return (ft_error("Error\nMissing wall"));
+		i++;
+	}
+	i = 1;
+	while (data->tab[i])
+	{
+		// printf("%c %c\n", data->tab[i][0], data->tab[i][data->col-1]);
+		if (data->tab[i][0] != '1' || data->tab[i][data->col-1] != '1')
+			return (ft_error("Error\nMissing wall"));
+		i++;
+	}
+	i = 0;
+	while (i < data->col)
+	{
+		if (data->tab[data->row - 1][i] != '1')
+			return (ft_error("Error\nMissing wall"));
+		i++;
+	}
 	return (1);
 }
 
