@@ -12,7 +12,7 @@
 
 #include "../../so_long.h"
 
-int	init_tab_data(t_data *data, char *arg)
+int	init_map(t_data *data, char *arg)
 {
 	int	fd;
 	int	i;
@@ -68,8 +68,14 @@ void	init_data(t_data *data)
 
 int		img_is_ok()
 {
-	if (!open("../asset/exit.xpm", O_RDONLY))
-		return (ft_error("Can't open exit.xpm"));
+	if (open("asset/exit.xpm", O_RDONLY) <= 0)
+		return (ft_error("Error\nCan't open exit.xpm"));
+	if (open("asset/perso.xpm", O_RDONLY) <= 0)
+		return (ft_error("Error\nCan't open perso.xpm"));
+	if (open("asset/void.xpm", O_RDONLY) <= 0)
+		return (ft_error("Error\nCan't open void.xpm"));
+	if (open("asset/wall.xpm", O_RDONLY) <= 0)
+		return (ft_error("Error\nCan't open wall.xpm"));
 	return (1);
 }
 
@@ -82,15 +88,26 @@ int		check_input(char *file)
 	i = ft_strlen(file);
 	if (file[i-1] != 'r' || file[i-2] != 'e' || file[i-3] != 'b' || file[i-4] != '.')
 		return (ft_error("Error\nFile have to be .ber ext"));
+	if (open(file, O_RDONLY) <= 0)
+		return (ft_error("Error\nCan't open the map"));
 	return (1);
 }
 
-// int		init_parsing(t_data data, char *arg)
-// {
-//     if (!check_input(arg) || !count_lines(data, arg) || !img_is_ok())
-//         return (0);
+int		check_border(t_data *data)
+{
+	int	i;
+	int y;
+
+	data->tab
+	return (1);
+}
+
+int		init_parsing(t_data *data, char *arg)
+{
+    if (!check_input(arg) || !count_lines(data, arg) || !img_is_ok())
+        return (0);
 //     if (!init_map(data, arg) || !check_line_length(data)
 //         || !chars_is_ok(data) || !check_border(data))
 //         return (0);
-//     return (1);
-// }
+    return (1);
+}

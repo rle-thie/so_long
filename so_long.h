@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/05 17:36:58 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/14 12:21:24 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ typedef struct s_data
 }t_data;
 
 // parsing :
-void    init_parsing(t_data data, char *arg);
+int		init_parsing(t_data *data, char *arg);
 void	init_data(t_data *data);
-int		count_lines(t_data *data, char *arg)
-int		init_tab_data(t_data *data, char *arg);
+int		check_border(t_data *data);
+int		count_lines(t_data *data, char *arg);
+int		init_map(t_data *data, char *arg);
 int		check_input(char *file);
 int		img_is_ok();
 
