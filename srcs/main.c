@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/14 12:41:44 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/14 18:02:24 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int main(int ac, char **av)
 	
 	init_map(&data, av[1]);
 	check_border(&data);
+	check_line_length(&data);
 	// while (i < data.row)
 	// 	printf("%s", data.tab[i++]);
 	return(0);

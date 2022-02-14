@@ -125,6 +125,23 @@ int		check_border(t_data *data)
 	return (1);
 }
 
+int		check_line_length(t_data *data)
+{
+	int	i;
+	int	max;
+
+	i = 0;
+	while (i < data->row)
+	{
+		max = ft_strlen(data->tab[i]);
+		printf("%d, %d", max, data->col - 1);
+		if (max != data->col - 1)
+			return(ft_error("Error\nMap must be un carre"));
+		i++;
+	}
+	return (1);
+}
+
 int		init_parsing(t_data *data, char *arg)
 {
     if (!check_input(arg) || !count_lines(data, arg) || !img_is_ok())
