@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/15 14:07:34 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/15 14:38:13 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct s_data
 	int		p;
 	int		row;
 	int		col;
+	void	*mlx_win;
+	void	*mlx;
 }t_data;
 
 // parsing :

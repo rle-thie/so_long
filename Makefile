@@ -7,7 +7,7 @@ SRCS	= $(addprefix srcs/, main.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-NAME 	= so_long.out
+NAME 	= so_long
 
 RM		= rm -f
 
