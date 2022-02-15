@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/15 12:25:47 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/15 14:07:34 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		check_input(char *file);
 int		img_is_ok();
 
 // game :
+int		game(t_data *data);
 
 // GNL :
 size_t	ft_strlen(char *str);

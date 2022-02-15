@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:19:24 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/15 12:27:48 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/15 14:08:32 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ int main(int ac, char **av)
 	if (ac != 2)
 		return (ft_error("Error\nNumber of argument not valid"));
 	init_data(&data);
-	init_parsing(&data, av[1]);
-	
-	init_map(&data, av[1]);
-	check_border(&data);
-	check_line_length(&data);
-	chars_is_ok(&data);
+	// init_parsing(&data, av[1]);
+	if (init_parsing(&data, av[1]) == 1)
+		game(&data);
+	// init_map(&data, av[1]);
+	// check_border(&data);
+	// check_line_length(&data);
+	// chars_is_ok(&data);
 	// while (i < data.row)
 	// 	printf("%s", data.tab[i++]);
 	return(0);

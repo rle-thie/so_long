@@ -19,6 +19,8 @@ int	init_map(t_data *data, char *arg)
 
 	i = 0;
 	fd = open(arg, O_RDONLY);
+	if (!fd)
+		return (ft_error("Error\nCan't read map"));
 	data->tab = malloc(sizeof(char *) * (data->row + 1));
 	if (!data->tab || fd < 0)
 		return (ft_error("Error\nCan't open file."));
@@ -170,7 +172,7 @@ int		chars_is_ok(t_data *data)
 			else if (data->tab[x][y] != '1' && data->tab[x][y] != '0'
 					&& data->tab[x][y] != '\n')
 			{
-				printf("%c", data->tab[x][y]);
+				// printf("%c", data->tab[x][y]);
 				return (ft_error("Error\nCaractere chelou"));
 			}
 			y++;
@@ -179,7 +181,7 @@ int		chars_is_ok(t_data *data)
 	}
 	if (data->c <= 0 || data->e != 1 || data->p != 1)
 		return (ft_error("Error\nExit, player or consumable missing"));
-	printf("map is ok");
+	// printf("map is ok");
 	return (1);
 }
 
@@ -187,8 +189,8 @@ int		init_parsing(t_data *data, char *arg)
 {
     if (!check_input(arg) || !count_lines(data, arg) || !img_is_ok())
         return (0);
-//     if (!init_map(data, arg) || !check_line_length(data)
-//         || !chars_is_ok(data) || !check_border(data))
-//         return (0);
+    if (!init_map(data, arg) || !check_line_length(data)
+        || !chars_is_ok(data) || !check_border(data))
+        return (0);
     return (1);
 }
