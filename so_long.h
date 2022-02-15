@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/15 14:38:13 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/15 16:23:06 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-#include <stdio.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <mlx.h>
@@ -32,8 +32,10 @@ typedef struct s_data
 	int		p;
 	int		row;
 	int		col;
+	int		img_size;
 	void	*mlx_win;
 	void	*mlx;
+	void	*img;
 }t_data;
 
 // parsing :

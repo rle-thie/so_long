@@ -68,6 +68,7 @@ void	init_data(t_data *data)
 	data->col = 0;
 	data->mlx = NULL;
 	data->mlx_win = NULL;
+	data->img_size = 64;
 }
 
 int		img_is_ok()
