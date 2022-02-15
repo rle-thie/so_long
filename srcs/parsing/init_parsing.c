@@ -153,7 +153,7 @@ int		check_line_length(t_data *data)
 int		chars_is_ok(t_data *data)
 {
 	printf("ouais");
-	return (0);
+	return (0)
 }
 
 int		init_parsing(t_data *data, char *arg)
