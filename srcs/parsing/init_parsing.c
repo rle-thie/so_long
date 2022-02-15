@@ -133,13 +133,27 @@ int		check_line_length(t_data *data)
 	i = 0;
 	while (i < data->row)
 	{
-		max = ft_strlen(data->tab[i]);
-		printf("%d, %d", max, data->col - 1);
-		if (max != data->col - 1)
+		max = ft_strlen(data->tab[i]) - 1;
+		if (data->row == i + 1)
+			max = ft_strlen(data->tab[i]);
+		// printf("%d, %d\n", max, data->col);
+		// printf("ok %d %d \n", i, data->row);
+		// if (data->row == i + 1 && max == data->col)
+		// 	break ;
+		if (max != data->col)
+		{
+			// printf("%d %d\n", max, data->col);
 			return(ft_error("Error\nMap must be un carre"));
+		}
 		i++;
 	}
 	return (1);
+}
+
+int		chars_is_ok(t_data *data)
+{
+	printf("ouais");
+	return (0);
 }
 
 int		init_parsing(t_data *data, char *arg)

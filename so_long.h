@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/14 18:02:07 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/15 12:25:47 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		init_parsing(t_data *data, char *arg);
 void	init_data(t_data *data);
 int		check_border(t_data *data);
 int		check_line_length(t_data *data);
+int		chars_is_ok(t_data *data);
 int		count_lines(t_data *data, char *arg);
 int		init_map(t_data *data, char *arg);
 int		check_input(char *file);
