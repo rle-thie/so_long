@@ -152,8 +152,35 @@ int		check_line_length(t_data *data)
 
 int		chars_is_ok(t_data *data)
 {
-	printf("ouais");
-	return (0)
+	int x;
+	int y;
+
+	x = 0;
+	while (data->tab[x])
+	{
+		y = 0;
+		while (data->tab[x][y])
+		{
+			if (data->tab[x][y] == 'C')
+				data->c++;
+			else if (data->tab[x][y] == 'P')
+				data->p++;
+			else if (data->tab[x][y] == 'E')
+				data->e++;
+			else if (data->tab[x][y] != '1' && data->tab[x][y] != '0'
+					&& data->tab[x][y] != '\n')
+			{
+				printf("%c", data->tab[x][y]);
+				return (ft_error("Error\nCaractere chelou"));
+			}
+			y++;
+		}
+		x++;
+	}
+	if (data->c <= 0 || data->e != 1 || data->p != 1)
+		return (ft_error("Error\nExit, player or consumable missing"));
+	printf("map is ok");
+	return (1);
 }
 
 int		init_parsing(t_data *data, char *arg)
