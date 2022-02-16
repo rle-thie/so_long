@@ -6,11 +6,25 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:03:18 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/16 18:30:43 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:56:45 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
+
+int		ft_free_map(t_data *data)
+{
+	int i;
+	
+	i = 0;
+	while (i < data->row)
+	{
+		free(data->tab[i]);
+		i++;
+	}
+	free(data->tab);
+	return (1);
+}
 
 int		select_img(t_data *data, char c)
 {
@@ -74,11 +88,11 @@ int		player_position(t_data *data)
 
 int		ft_end(t_data *data)
 {
-	printf("\nBravo !\nScore : %d\nFin du jeu.", data->mv);
 	mlx_clear_window(data->mlx, data->mlx_win);
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);
+	ft_free_map(data);
 	exit (0);
 	//free de la map
 	return (1);

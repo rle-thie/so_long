@@ -6,11 +6,20 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 15:01:10 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/16 18:39:51 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:51:59 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+void	win(t_data *data)
+{
+	if (data->c == 0)
+	{
+		printf("\nBravo !\nScore : %d\nFin du jeu.", data->mv);
+		ft_end(data);
+	}
+}
 
 int		m_up(t_data *data)
 {
