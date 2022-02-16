@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/16 16:14:39 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:17:45 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int		m_up(t_data *data);
 int		m_down(t_data *data);
 int		m_left(t_data *data);
 int		m_right(t_data *data);
+int		ft_end(t_data *data);
 
 // GNL :
 size_t	ft_strlen(char *str);
