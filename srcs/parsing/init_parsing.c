@@ -31,7 +31,8 @@ int	init_map(t_data *data, char *arg)
 			break ;
 		i++;
 	}
-	close(fd);
+	if (close(fd) == -1)
+		return (ft_error("Error\nCan't close input file"));
 	return (1);
 }
 
@@ -66,11 +67,10 @@ void	init_data(t_data *data)
 	data->p = 0;
 	data->row = 0;
 	data->col = 0;
-	data->mlx = NULL;
-	data->mlx_win = NULL;
 	data->img_size = 64;
 	data->position_x = 0;
 	data->position_y = 0;
+	data->mv = 0;
 }
 
 int		img_is_ok()

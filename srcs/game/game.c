@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:03:18 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/16 14:52:20 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:56:19 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,13 @@ int		print_map(t_data *data)
 	int	y;
 
 	i = 0;
-	data->img = mlx_xpm_file_to_image(data->mlx, "asset/exit.xpm", &data->img_size, &data->img_size);
 	while (i < data->row)
 	{
 		y = 0;
 		while (y < data->col)
 		{
 			select_img(data, data->tab[i][y]);
-			// select_img(data, 'C');
-			mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, y*64, i*64);
+			mlx_put_image_to_window(data->mlx, data->mlx_win, data->img, y * 64, i * 64);
 			mlx_destroy_image(data->mlx, data->img);
 			y++;
 		}
@@ -74,11 +72,30 @@ int		player_position(t_data *data)
 	return (0);
 }
 
-int		key_event(int key, t_data *data)
+int		ft_end(t_data *data)
+{
+	mlx_clear_window(data->mlx, data->mlx_win);
+	mlx_destroy_window(data->mlx, data->mlx_win);
+	mlx_destroy_display(data->mlx);
+	free(data->mlx);
+	exit (0);
+	//free de la map
+	return (1);
+}
+
+int		key_event(int keycode, t_data *data)
 {
 	player_position(data);
-	// if (keycode == droite)
-	// 	m_up(data);
+	if (keycode == 'w')
+		m_up(data);
+	else if (keycode == 's')
+		m_down(data);
+	else if (keycode == 'a')
+		m_left(data);
+	else if (keycode == 'd')
+		m_right(data);
+	else if (keycode == 112)
+		ft_end(data);
 	return (1);
 }
 
@@ -88,11 +105,9 @@ int		game(t_data *data)
 	data->mlx_win = mlx_new_window(data->mlx, data->col*64, data->row*64, "So_long");
 	
 	print_map(data);
-	
 	mlx_key_hook(data->mlx_win, &key_event, data);
-	// mlx_hook(data->mlx_win, 17 ,17, &ft_exit, data);
+	// mlx_hook(data->mlx_win, 17 ,17, &ft_end, data);
 	mlx_loop(data->mlx);
-	
 	return (1);
 }
 /*
@@ -101,4 +116,8 @@ int		game(t_data *data)
 	left = 97;
 	right = 100;
 	echap = XK_Escape;
+	clearwindoz
+	destroywindow
+	destroye display
+	
 */

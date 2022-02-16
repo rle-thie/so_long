@@ -3,7 +3,8 @@ SRCS	= $(addprefix srcs/, main.c \
 							utils/get_next_line.c \
 							utils/get_next_line_utils.c \
 							utils/error.c \
-							game/game.c)
+							game/game.c \
+							game/move.c)
 
 OBJS	= ${SRCS:.c=.o}
 
