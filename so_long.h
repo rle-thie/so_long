@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/16 12:52:45 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:30:52 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ int		img_is_ok();
 
 // game :
 int		game(t_data *data);
+int		player_position(t_data *data);
+int		print_map(t_data *data);
+int		select_img(t_data *data, char c);
 
 // GNL :
 size_t	ft_strlen(char *str);
