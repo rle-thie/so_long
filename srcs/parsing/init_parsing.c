@@ -69,6 +69,8 @@ void	init_data(t_data *data)
 	data->mlx = NULL;
 	data->mlx_win = NULL;
 	data->img_size = 64;
+	data->position_x = 0;
+	data->position_y = 0;
 }
 
 int		img_is_ok()
@@ -81,6 +83,8 @@ int		img_is_ok()
 		return (ft_error("Error\nCan't open void.xpm"));
 	if (open("asset/wall.xpm", O_RDONLY) <= 0)
 		return (ft_error("Error\nCan't open wall.xpm"));
+	if (open("asset/consumable.xpm", O_RDONLY) <= 0)
+		return (ft_error("Error\nCan't open consumable.xpm"));
 	return (1);
 }
 
