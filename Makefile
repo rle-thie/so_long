@@ -1,10 +1,12 @@
 SRCS	= $(addprefix srcs/, main.c \
 							parsing/init_parsing.c \
+							parsing/parsing_utils.c \
 							utils/get_next_line.c \
 							utils/get_next_line_utils.c \
 							utils/error.c \
 							game/game.c \
-							game/move.c)
+							game/move.c \
+							game/game_utils.c)
 
 OBJS	= ${SRCS:.c=.o}
 

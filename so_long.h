@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/16 18:54:58 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/17 12:48:11 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 typedef struct s_data
 {
-	char **tab;
+	char	**tab;
 	int		c;
 	int		e;
 	int		p;
@@ -37,7 +37,7 @@ typedef struct s_data
 	void	*mlx;
 	void	*img;
 	int		position_x;
-	int 	position_y;
+	int		position_y;
 	int		mv;
 }t_data;
 
@@ -50,7 +50,7 @@ int		chars_is_ok(t_data *data);
 int		count_lines(t_data *data, char *arg);
 int		init_map(t_data *data, char *arg);
 int		check_input(char *file);
-int		img_is_ok();
+int		img_is_ok(void);
 
 // game :
 int		game(t_data *data);
@@ -63,7 +63,7 @@ int		m_down(t_data *data);
 int		m_left(t_data *data);
 int		m_right(t_data *data);
 int		ft_end(t_data *data);
-void	win(t_data *data);
+void	ft_win(t_data *data);
 int		ft_free_map(t_data *data);
 
 // GNL :
@@ -72,5 +72,5 @@ char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strchr(char *s, char c);
 
-int ft_error(char *str);
+int		ft_error(char *str);
 #endif
