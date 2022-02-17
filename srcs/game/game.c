@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:03:18 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/17 16:24:07 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:07:10 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int	game(t_data *data)
 			data->col * 64, data->row * 64, "So_long");
 	print_map(data);
 	mlx_key_hook(data->mlx_win, &key_event, data);
+	// mlx_hook()
 	mlx_loop(data->mlx);
 	return (1);
 }
