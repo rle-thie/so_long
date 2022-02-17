@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:03:18 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/17 13:01:07 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:24:07 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	key_event(int keycode, t_data *data)
 		m_left(data);
 	else if (keycode == 'd')
 		m_right(data);
-	else if (keycode == 112)
+	else if (keycode == 65307)
 		ft_end(data);
 	return (1);
 }

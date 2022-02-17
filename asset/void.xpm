@@ -1,7 +1,9 @@
 /* XPM */
-static char * zvoid_xpm[] = {
-"64 64 1 1",
-" 	c #FCD8A8",
+static char *fcb4c027e2784c50c40c709216ffc4e6Z7UHQCBjAbK9uNzM[] = {
+/* columns rows colors chars-per-pixel */
+"64 64 1 1 ",
+"  c white",
+/* pixels */
 "                                                                ",
 "                                                                ",
 "                                                                ",

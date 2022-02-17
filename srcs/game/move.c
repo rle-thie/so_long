@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 15:01:10 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/17 13:05:16 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:28:14 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_win(t_data *data)
 {
 	if (data->c == 0)
 	{
-		printf("\nEnd !\nScore : %d.", data->mv);
+		printf("\nEnd !\nScore : %d.\n", data->mv);
 		ft_end(data);
 	}
 }
