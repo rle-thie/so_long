@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:40:38 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/03/15 15:20:00 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:59:02 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		count_lines(t_data *data, char *arg);
 int		init_map(t_data *data, char *arg);
 int		check_input(char *file);
 int		img_is_ok(void);
+int	free_map(t_data *data);
 
 // game :
 int		game(t_data *data);

@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:34:30 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/02/17 12:55:23 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/03/15 16:16:39 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,19 @@ int	chars_is_ok(t_data *data)
 	if (data->c <= 0 || data->e != 1 || data->p != 1)
 		return (ft_error("Error\nExit, player or consumable missing"));
 	return (1);
+}
+
+int	free_map(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->row)
+	{
+		free(data->tab[i]);
+		i++;
+	}
+	free(data->tab[i]);
+	free(data->tab);
+	return (0);
 }

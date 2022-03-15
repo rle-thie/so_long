@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 12:59:49 by  rle-thie         #+#    #+#             */
-/*   Updated: 2022/02/17 13:09:55 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:58:26 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,6 @@ int	init_parsing(t_data *data, char *arg)
 		return (0);
 	if (!init_map(data, arg) || !check_line_length(data)
 		|| !chars_is_ok(data) || !check_border(data))
-		return (0);
+		return (free_map(data));
 	return (1);
 }
